@@ -2,9 +2,6 @@
   "name": "unity-test-adressables",
   "version": "0.1.0",
   "description": "A sample Node.js app using Express 4 for test unity addressables",
-  "engines": {
-    "node": "18.x || 16.x"
-  },
   "main": "index.js",
   "scripts": {
     "start": "node index.js",

@@ -1,19 +1,8 @@
-FROM node:12
-
-# создание директории приложения
-WORKDIR /usr/src/app
-
-# установка зависимостей
-# символ астериск ("*") используется для того чтобы по возможности
-# скопировать оба файла: package.json и package-lock.json
+FROM node:lts-alpine
+WORKDIR /usr/app
 COPY package*.json ./
-
 RUN npm install
-# Если вы создаете сборку для продакшн
-# RUN npm ci --only=production
-
-# копируем исходный код
 COPY . .
-
-EXPOSE 8080
-CMD [ "npm", "run", "start" ]
+EXPOSE 5001
+# RUN npm run ts-build
+CMD ["node", "index.js"]
